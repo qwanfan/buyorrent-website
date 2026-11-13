@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy or Rent - 支持与帮助</title>
+    <title>Buy or Rent - Support</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -215,13 +215,13 @@
     <div class="language-selector">
         <div class="language-dropdown">
             <button class="language-button" type="button" onclick="toggleLanguageDropdown()" aria-expanded="false">
-                <span id="current-flag">🇨🇳</span>
-                <span id="current-language">简体中文</span>
+                <span id="current-flag">🇺🇸</span>
+                <span id="current-language">English</span>
                 <span>▼</span>
             </button>
             <div class="language-dropdown-content" id="language-dropdown">
-                <button type="button" class="language-option active" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans"><span>🇨🇳</span><span>简体中文</span></button>
-                <button type="button" class="language-option" onclick="changeLanguage('en')" data-lang="en"><span>🇺🇸</span><span>English</span></button>
+                <button type="button" class="language-option" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans"><span>🇨🇳</span><span>简体中文</span></button>
+                <button type="button" class="language-option active" onclick="changeLanguage('en')" data-lang="en"><span>🇺🇸</span><span>English</span></button>
             </div>
         </div>
     </div>
@@ -229,169 +229,169 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <h1 data-i18n="header">Buy or Rent 支持</h1>
-                <p data-i18n="subtitle">操作说明、常见问题和联系方式</p>
+                <h1 data-i18n="header">Buy or Rent Support</h1>
+                <p data-i18n="subtitle">How it works, common questions, and how to reach us</p>
             </div>
         </div>
     </header>
 
     <main class="main-content">
         <div class="container">
-            <a href="index.html" class="back-link" data-i18n="backLink">← 返回主页</a>
+            <a href="index.html" class="back-link" data-i18n="backLink">← Back to Home</a>
 
             <div class="support-grid">
                 <article class="support-card">
-                    <h3 data-i18n="startTitle">开始使用</h3>
-                    <p data-i18n="startText">打开应用即可看到默认国家与房型下的买 vs 租结论。</p>
+                    <h3 data-i18n="startTitle">Get started</h3>
+                    <p data-i18n="startText">Open the app to see the default Buy vs Rent result for your country and home type.</p>
                     <ul>
-                        <li data-i18n="start1">选择国家与房型，加载当地市场基准</li>
-                        <li data-i18n="start2">在结果页拖动年份，查看 1–30 年净财富差距</li>
-                        <li data-i18n="start3">按需修改房价、利率、租金等参数</li>
+                        <li data-i18n="start1">Pick a country and home type to load local market benchmarks</li>
+                        <li data-i18n="start2">On Results, drag the year to inspect the net-worth gap from year 1 to 30</li>
+                        <li data-i18n="start3">Edit price, rate, rent, and other inputs as needed</li>
                     </ul>
                 </article>
                 <article class="support-card">
-                    <h3 data-i18n="useTitle">你会看到什么</h3>
+                    <h3 data-i18n="useTitle">What you see</h3>
                     <ul>
-                        <li data-i18n="use1">结论：买、租，或接近持平</li>
-                        <li data-i18n="use2">期末净财富差额与逐年优势曲线</li>
-                        <li data-i18n="use3">月供、持有成本、房价与贷款余额</li>
-                        <li data-i18n="use4">差额公式的各项分解；可导出 PDF（需解锁）</li>
+                        <li data-i18n="use1">A verdict: Buy, Rent, or near a tie</li>
+                        <li data-i18n="use2">Ending net-worth gap and the year-by-year advantage curve</li>
+                        <li data-i18n="use3">Monthly payment, holding cost, home value, and remaining loan</li>
+                        <li data-i18n="use4">Each term in the gap formula; PDF export after unlock</li>
                     </ul>
                 </article>
                 <article class="support-card">
-                    <h3 data-i18n="unlockTitle">试用与解锁</h3>
-                    <p data-i18n="unlockText">只看默认结果不收费。首次主动改参数起算 24 小时试用。</p>
+                    <h3 data-i18n="unlockTitle">Trial and unlock</h3>
+                    <p data-i18n="unlockText">Viewing the default result is free. The first time you change a parameter, a 24-hour trial begins.</p>
                     <ul>
-                        <li data-i18n="unlock1">试用结束后，一次购买可永久改参</li>
-                        <li data-i18n="unlock2">PDF 导出包含在同一次购买中；试用期间不可导出</li>
-                        <li data-i18n="unlock3">换机或重装后，在解锁页点「恢复购买」</li>
+                        <li data-i18n="unlock1">After the trial, one purchase unlocks permanent editing</li>
+                        <li data-i18n="unlock2">PDF export is included in that purchase; it stays locked during the trial</li>
+                        <li data-i18n="unlock3">After reinstalling, tap Restore Purchases on the unlock screen</li>
                     </ul>
                 </article>
                 <article class="support-card">
-                    <h3 data-i18n="troubleTitle">遇到问题时</h3>
+                    <h3 data-i18n="troubleTitle">If something goes wrong</h3>
                     <ul>
-                        <li data-i18n="trouble1">市场数据未更新：检查网络；离线时使用安装包内数据</li>
-                        <li data-i18n="trouble2">连不上 App Store：检查网络后重试</li>
-                        <li data-i18n="trouble3">购买等待批准：等 Apple 处理完成</li>
-                        <li data-i18n="trouble4">看不到已购状态：在解锁页点「恢复购买」</li>
+                        <li data-i18n="trouble1">Market data did not refresh: check the network; offline, the app uses the bundled table</li>
+                        <li data-i18n="trouble2">Cannot reach the App Store: check the network and try again</li>
+                        <li data-i18n="trouble3">Purchase pending: wait for Apple to finish approval</li>
+                        <li data-i18n="trouble4">Purchase not showing: tap Restore Purchases on the unlock screen</li>
                     </ul>
                 </article>
             </div>
 
             <section class="support-section">
-                <h2 data-i18n="faqTitle">常见问题</h2>
+                <h2 data-i18n="faqTitle">Common questions</h2>
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" onclick="toggleFAQ(this)">
-                        <span data-i18n="q1">试用怎么开始？免费能用多久？</span>
+                        <span data-i18n="q1">When does the trial start, and how long is it?</span>
                         <span class="faq-symbol">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="a1">查看默认比较不开始试用。你第一次主动修改任意参数时，会开始 24 小时免费试用，期间可自由改参。试用结束后继续改参会打开解锁页。试用期间不能导出 PDF。</p>
+                        <p data-i18n="a1">Viewing the default comparison does not start a trial. The first time you actively change any input, a 24-hour free trial begins and editing stays open. After it ends, the next edit opens the unlock screen. PDF export is unavailable during the trial.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" onclick="toggleFAQ(this)">
-                        <span data-i18n="q2">如何解锁，以及如何恢复购买？</span>
+                        <span data-i18n="q2">How do I unlock, and how do I restore a purchase?</span>
                         <span class="faq-symbol">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="a2intro">试用结束后改参，或尝试导出 PDF 时，会出现解锁页。你可以：</p>
+                        <p data-i18n="a2intro">The unlock screen appears after the trial when you try to edit, or when you try to export a PDF. On that screen:</p>
                         <ol>
-                            <li data-i18n="a2li1">点购买，通过 App Store 完成一次性付款</li>
-                            <li data-i18n="a2li2">如果这台设备上看不到已购买状态，点「恢复购买」</li>
+                            <li data-i18n="a2li1">Tap Purchase and complete the one-time payment in the App Store</li>
+                            <li data-i18n="a2li2">If this device does not show the purchase, tap Restore Purchases</li>
                         </ol>
-                        <p data-i18n="a2end">购买成功后，可永久调整参数并导出 PDF。这不是自动续期订阅。</p>
+                        <p data-i18n="a2end">After purchase, editing and PDF export stay unlocked. This is not an auto-renewable subscription.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" onclick="toggleFAQ(this)">
-                        <span data-i18n="q3">我输入的数字会被上传吗？</span>
+                        <span data-i18n="q3">Are the numbers I enter uploaded?</span>
                         <span class="faq-symbol">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="a3">不会。你输入的房价、租金、利率等只在本机计算。有网络时，应用会下载公开的市场基准数据以更新默认值，该请求不包含你填写的内容。应用不要求注册账号。</p>
+                        <p data-i18n="a3">No. Prices, rents, rates, and other inputs you type are calculated on the device. When online, the app downloads public market benchmarks to refresh defaults. That request does not include the values you typed. The app does not ask you to create an account.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" onclick="toggleFAQ(this)">
-                        <span data-i18n="q4">结果是投资或贷款建议吗？</span>
+                        <span data-i18n="q4">Is the result financial or mortgage advice?</span>
                         <span class="faq-symbol">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="a4">不是。Buy or Rent 是估算工具，按你输入的假设比较买与租的期末净财富。结果不是预测、贷款报价，也不构成财务、税务、法律或房贷建议。真实交易的税费、费率、贷款条款与回报会不同，请按具体房源与书面报价修改参数。</p>
+                        <p data-i18n="a4">No. Buy or Rent is a calculator. It estimates ending net worth from the assumptions you enter. Results are not a forecast, a loan offer, or financial, tax, legal, or mortgage advice. A real purchase will have different taxes, fees, loan terms, and returns. Change the inputs to match a specific home and a written quote.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" type="button" onclick="toggleFAQ(this)">
-                        <span data-i18n="q5">想退款怎么办？</span>
+                        <span data-i18n="q5">How do I request a refund?</span>
                         <span class="faq-symbol">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="a5">付款由 Apple 处理。请在报告问题页面（reportaproblem.apple.com）用购买时的 Apple 账号申请退款。我们无法直接从应用里撤销一笔 App Store 付款。</p>
+                        <p data-i18n="a5">Apple processes the payment. Request a refund at reportaproblem.apple.com with the Apple Account used to buy it. We cannot reverse an App Store payment from inside the app.</p>
                     </div>
                 </div>
             </section>
 
             <section class="support-section">
-                <h2 data-i18n="contactTitle">联系支持</h2>
-                <p data-i18n="contactText">没有找到答案时，可以直接发邮件，或填写下面的表单。</p>
+                <h2 data-i18n="contactTitle">Contact support</h2>
+                <p data-i18n="contactText">If you still need help, email us or use the form below.</p>
                 <div class="note">
-                    <span data-i18n="mailLead">邮箱：</span>
+                    <span data-i18n="mailLead">Email: </span>
                     <a href="mailto:fancheng_wang@hotmail.com?subject=Buy%20or%20Rent%20Support">fancheng_wang@hotmail.com</a>
                 </div>
                 <div id="form-success" class="alert-success" hidden>
-                    <strong data-i18n="successTitle">已收到你的消息。</strong>
-                    <span data-i18n="successText">我们会尽快回复。</span>
+                    <strong data-i18n="successTitle">We received your message.</strong>
+                    <span data-i18n="successText">We will reply as soon as we can.</span>
                 </div>
                 <div id="form-error" class="alert-error" hidden>
-                    <span data-i18n="errorText">发送失败。请直接发邮件，或稍后再试。</span>
+                    <span data-i18n="errorText">Could not send the message. Please email us, or try again later.</span>
                 </div>
                 <form name="buyorrent-support" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
                     <input type="hidden" name="form-name" value="buyorrent-support">
                     <p class="honeypot" aria-hidden="true"><label>Bot <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
                     <div class="form-group">
-                        <label for="name" data-i18n="labelName">姓名</label>
+                        <label for="name" data-i18n="labelName">Name</label>
                         <input id="name" name="name" type="text" required>
                     </div>
                     <div class="form-group">
-                        <label for="email" data-i18n="labelEmail">邮箱</label>
+                        <label for="email" data-i18n="labelEmail">Email</label>
                         <input id="email" name="email" type="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="subject" data-i18n="labelSubject">主题</label>
+                        <label for="subject" data-i18n="labelSubject">Subject</label>
                         <select id="subject" name="subject" required>
-                            <option value="howto" data-i18n="optHowto">怎么使用</option>
-                            <option value="purchase" data-i18n="optPurchase">购买与恢复</option>
-                            <option value="bug" data-i18n="optBug">问题反馈</option>
-                            <option value="other" data-i18n="optOther">其他</option>
+                            <option value="howto" data-i18n="optHowto">How to use the app</option>
+                            <option value="purchase" data-i18n="optPurchase">Purchase and restore</option>
+                            <option value="bug" data-i18n="optBug">Bug report</option>
+                            <option value="other" data-i18n="optOther">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="message" data-i18n="labelMessage">内容</label>
+                        <label for="message" data-i18n="labelMessage">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button class="btn" type="submit" data-i18n="submit">发送</button>
+                    <button class="btn" type="submit" data-i18n="submit">Send</button>
                 </form>
             </section>
 
             <section class="support-section">
-                <h2 data-i18n="appInfoTitle">应用信息</h2>
+                <h2 data-i18n="appInfoTitle">App information</h2>
                 <div class="info-grid">
                     <div>
-                        <h3 data-i18n="versionTitle">版本</h3>
+                        <h3 data-i18n="versionTitle">Version</h3>
                         <p data-i18n="versionText">1.0</p>
                     </div>
                     <div>
-                        <h3 data-i18n="requireTitle">系统要求</h3>
-                        <p data-i18n="requireText">iPhone / iPad：iOS 17.0 或更高；Mac：macOS 14.0 或更高</p>
+                        <h3 data-i18n="requireTitle">Requirements</h3>
+                        <p data-i18n="requireText">iPhone / iPad with iOS 17.0 or later; Mac with macOS 14.0 or later</p>
                     </div>
                     <div>
-                        <h3 data-i18n="devTitle">开发者</h3>
+                        <h3 data-i18n="devTitle">Developer</h3>
                         <p>北京润智启航科技有限公司</p>
                     </div>
                 </div>
@@ -401,8 +401,8 @@
 
     <footer class="footer">
         <div class="container">
-            <p data-i18n="footerCopyright">© 2026 Buy or Rent. 保留所有权利。</p>
-            <p><a href="privacy.html" style="color:white;" data-i18n="footerPrivacy">隐私政策</a></p>
+            <p data-i18n="footerCopyright">© 2026 Buy or Rent. All rights reserved.</p>
+            <p><a href="privacy.html" style="color:white;" data-i18n="footerPrivacy">Privacy Policy</a></p>
         </div>
     </footer>
 
@@ -553,7 +553,7 @@
         }
 
         function applyLanguage(lang) {
-            const current = translations[lang] ? lang : 'zh-Hans';
+            const current = translations[lang] ? lang : 'en';
             const t = translations[current];
             document.documentElement.lang = current === 'en' ? 'en' : 'zh-CN';
             document.title = t.pageTitle;
@@ -605,7 +605,7 @@
             }
         });
 
-        applyLanguage(localStorage.getItem('buyorrent-language') || 'zh-Hans');
+        applyLanguage(localStorage.getItem('buyorrent-language') || 'en');
     </script>
 </body>
 </html>

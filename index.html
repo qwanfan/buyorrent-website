@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html id="html-root" lang="zh-CN">
+<html id="html-root" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy or Rent - 看清买房在哪一年胜过租房</title>
-    <meta name="description" content="Buy or Rent 追踪房屋全生命周期内任意时点的净财富对比。第 4 年卖房可能输给租房，第 12 年又可能反超。拖动时间轴，看答案如何变化。">
+    <title>Buy or Rent - See the year buying beats rent</title>
+    <meta name="description" content="Buy or Rent tracks ending net worth of buying vs renting at any year from 1 to 30. Slide the timeline to see when buying beats rent—or whether it falls behind again.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -235,15 +235,15 @@
     <div class="language-selector">
         <div class="language-dropdown">
             <button class="language-button" type="button" onclick="toggleLanguageDropdown()" aria-haspopup="listbox" aria-expanded="false">
-                <span class="language-flag" id="current-flag">🇨🇳</span>
-                <span id="current-language">简体中文</span>
+                <span class="language-flag" id="current-flag">🇺🇸</span>
+                <span id="current-language">English</span>
                 <span>▼</span>
             </button>
             <div class="language-dropdown-content" id="language-dropdown">
-                <button type="button" class="language-option active" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans">
+                <button type="button" class="language-option" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans">
                     <span>🇨🇳</span><span>简体中文</span>
                 </button>
-                <button type="button" class="language-option" onclick="changeLanguage('en')" data-lang="en">
+                <button type="button" class="language-option active" onclick="changeLanguage('en')" data-lang="en">
                     <span>🇺🇸</span><span>English</span>
                 </button>
             </div>
@@ -257,10 +257,10 @@
                     <img src="images/AppIcon.png" alt="Buy or Rent" class="header-icon">
                     Buy or Rent
                 </h1>
-                <p data-i18n="heroText">买房不一定更好，租房也不一定是扔钱。答案取决于你在第几年退出。</p>
+                <p data-i18n="heroText">Buying is not always better than renting. Renting is not always throwing money away. The answer changes with the year you walk away.</p>
                 <div class="cta-buttons">
-                    <a href="#features" class="btn-primary" data-i18n="ctaLearn">了解更多</a>
-                    <a href="#download" class="btn-primary" data-i18n="ctaDownload">立即下载</a>
+                    <a href="#features" class="btn-primary" data-i18n="ctaLearn">Learn More</a>
+                    <a href="#download" class="btn-primary" data-i18n="ctaDownload">Download</a>
                 </div>
             </div>
         </div>
@@ -269,60 +269,60 @@
     <main class="main-content">
         <div class="container">
             <section id="features" class="feature-section">
-                <h2 data-i18n="featuresTitle">为什么选择 Buy or Rent？</h2>
+                <h2 data-i18n="featuresTitle">Why Buy or Rent?</h2>
                 <div class="features-grid">
                     <article class="feature-card">
                         <div class="feature-icon">📅</div>
-                        <h3 data-i18n="feature1Title">看清哪一年反超</h3>
-                        <p data-i18n="feature1Desc">沿 1–30 年时间轴滑动，看买房何时胜过租房，是否反超，又是否再度落后。</p>
+                        <h3 data-i18n="feature1Title">See the year it flips</h3>
+                        <p data-i18n="feature1Desc">Slide from year 1 to 30 and watch when buying pulls ahead of renting—or whether it ever does, or later falls behind again.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🏠</div>
-                        <h3 data-i18n="feature2Title">全生命周期成本</h3>
-                        <p data-i18n="feature2Desc">从首付与买入费用，到月供、地税、维修、保险与卖出成本，按月模拟到任意退出年份。</p>
+                        <h3 data-i18n="feature2Title">Full home lifecycle</h3>
+                        <p data-i18n="feature2Desc">From down payment and buying costs to mortgage, tax, maintenance, insurance, and selling costs—modeled month by month to any exit year.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">📈</div>
-                        <h3 data-i18n="feature3Title">比的是期末净财富</h3>
-                        <p data-i18n="feature3Desc">不只比月供和月租。首付与持有成本按投资回报复利到期末，再和卖房净得、省下房租对比。</p>
+                        <h3 data-i18n="feature3Title">Ending net worth, not bills</h3>
+                        <p data-i18n="feature3Desc">More than mortgage vs rent. Upfront cash and ownership costs compound at an investment return, then compare with net sale proceeds and rent saved.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🌍</div>
-                        <h3 data-i18n="feature4Title">20 国市场基准</h3>
-                        <p data-i18n="feature4Desc">按国家和房型加载公开来源的房价、利率、增值、租金与税费默认值，来源标注在数字旁，均可改。</p>
+                        <h3 data-i18n="feature4Title">Benchmarks for 20 countries</h3>
+                        <p data-i18n="feature4Desc">Load public-source defaults for price, rates, appreciation, rent, and fees by country and home type. Sources appear next to the numbers. Everything is editable.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🧮</div>
-                        <h3 data-i18n="feature5Title">公式一目了然</h3>
-                        <p data-i18n="feature5Desc">卖出净得、初始现金终值、持有成本终值、省下房租终值逐项标出，结论可核对。</p>
+                        <h3 data-i18n="feature5Title">The formula in plain sight</h3>
+                        <p data-i18n="feature5Desc">Net sale proceeds, future value of cash paid up front, holding costs, and rent saved—each term labeled so you can check the verdict.</p>
                     </article>
                     <article class="feature-card">
                         <div class="feature-icon">🔓</div>
-                        <h3 data-i18n="feature6Title">试用一天，一次买断</h3>
-                        <p data-i18n="feature6Desc">默认可直接看结果。首次改参起 24 小时免费试用；之后一次购买永久解锁改参与 PDF 导出，无订阅。</p>
+                        <h3 data-i18n="feature6Title">One day free, then one unlock</h3>
+                        <p data-i18n="feature6Desc">View the default comparison free. Your first edit starts a 24-hour trial. After that, one purchase unlocks permanent editing and PDF export. No subscription.</p>
                     </article>
                 </div>
             </section>
 
             <section class="navigation-section">
-                <h2 data-i18n="exploreTitle">探索更多</h2>
-                <p data-i18n="exploreText">获取帮助，或了解隐私政策</p>
+                <h2 data-i18n="exploreTitle">Explore More</h2>
+                <p data-i18n="exploreText">Get help, or read the privacy policy</p>
                 <div class="nav-links">
                     <a href="support.html" class="nav-link">
-                        <h3 data-i18n="navHelpTitle">📚 获取帮助</h3>
-                        <p data-i18n="navHelpDesc">操作说明、常见问题和联系支持</p>
+                        <h3 data-i18n="navHelpTitle">📚 Get Help</h3>
+                        <p data-i18n="navHelpDesc">How it works, common questions, and support</p>
                     </a>
                     <a href="privacy.html" class="nav-link">
-                        <h3 data-i18n="navPrivacyTitle">🔒 隐私政策</h3>
-                        <p data-i18n="navPrivacyDesc">了解输入数据、市场数据刷新和购买信息如何被处理</p>
+                        <h3 data-i18n="navPrivacyTitle">🔒 Privacy Policy</h3>
+                        <p data-i18n="navPrivacyDesc">How inputs, market-data refresh, and purchases are handled</p>
                     </a>
                 </div>
             </section>
 
             <section id="download" class="download-section">
-                <h2 data-i18n="downloadTitle">开始比较买与租</h2>
-                <p data-i18n="downloadText">在 App Store 搜索 Buy or Rent，下载到 iPhone、iPad 或 Mac 上使用。</p>
-                <p class="download-note" data-i18n="downloadNote">需要 iOS 17 或更高版本，或 macOS 14 或更高版本。</p>
+                <h2 data-i18n="downloadTitle">Start comparing buy vs rent</h2>
+                <p data-i18n="downloadText">Search for Buy or Rent on the App Store and download it to iPhone, iPad, or Mac.</p>
+                <p class="download-note" data-i18n="downloadNote">Requires iOS 17 or later, or macOS 14 or later.</p>
                 <div class="app-store-badge">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" id="app-store-badge">
                 </div>
@@ -332,12 +332,12 @@
 
     <footer class="footer">
         <div class="container">
-            <p data-i18n="footerCopyright">© 2026 Buy or Rent. 保留所有权利。</p>
+            <p data-i18n="footerCopyright">© 2026 Buy or Rent. All rights reserved.</p>
             <p data-i18n="footerCompany">北京润智启航科技有限公司</p>
             <div class="footer-links">
-                <a href="support.html" data-i18n="footerSupport">支持</a>
-                <a href="privacy.html" data-i18n="footerPrivacy">隐私</a>
-                <a href="mailto:fancheng_wang@hotmail.com" data-i18n="footerContact">联系我们</a>
+                <a href="support.html" data-i18n="footerSupport">Support</a>
+                <a href="privacy.html" data-i18n="footerPrivacy">Privacy</a>
+                <a href="mailto:fancheng_wang@hotmail.com" data-i18n="footerContact">Contact</a>
             </div>
         </div>
     </footer>
@@ -418,7 +418,7 @@
             }
         };
 
-        let currentLanguage = 'zh-Hans';
+        let currentLanguage = 'en';
 
         function toggleLanguageDropdown() {
             const menu = document.getElementById('language-dropdown');
@@ -433,7 +433,7 @@
         }
 
         function applyLanguage(lang) {
-            currentLanguage = translations[lang] ? lang : 'zh-Hans';
+            currentLanguage = translations[lang] ? lang : 'en';
             const t = translations[currentLanguage];
             document.documentElement.lang = currentLanguage === 'en' ? 'en' : 'zh-CN';
             document.title = t.pageTitle;
@@ -456,7 +456,7 @@
             }
         });
 
-        applyLanguage(localStorage.getItem('buyorrent-language') || 'zh-Hans');
+        applyLanguage(localStorage.getItem('buyorrent-language') || 'en');
     </script>
 </body>
 </html>
