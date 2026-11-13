@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy or Rent - 支持与帮助</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background-color: #f4f6f8;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header-content h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .header-content p { font-size: 1.15rem; opacity: 0.92; }
+        .main-content { padding: 3rem 0; }
+
+        .support-section, .support-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+        }
+
+        .support-section { margin-bottom: 2rem; }
+        .support-section h2 { color: #1d4ed8; margin-bottom: 1rem; font-size: 1.7rem; }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .support-card h3 {
+            color: #1d4ed8;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .support-card p, .support-card li { color: #475569; }
+        .support-card ul { margin: 0.75rem 0 0 1.1rem; }
+        .support-card li { margin-bottom: 0.35rem; }
+
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 1rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+
+        .faq-question {
+            font-weight: 650;
+            color: #334155;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: center;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font: inherit;
+            padding: 0;
+        }
+
+        .faq-answer { display: none; margin-top: 0.75rem; color: #475569; }
+        .faq-answer.active { display: block; }
+        .faq-answer ol, .faq-answer ul { margin: 0.5rem 0 0.5rem 1.2rem; }
+        .faq-answer li { margin-bottom: 0.3rem; }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .form-group { margin-bottom: 1.1rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: #334155; }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea { min-height: 120px; resize: vertical; }
+
+        .btn {
+            background: #1d4ed8;
+            color: white;
+            padding: 0.75rem 1.6rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #1e40af; }
+
+        .note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e3a8a;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .note a { color: #1d4ed8; font-weight: 700; }
+
+        .alert-success, .alert-error {
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .alert-error {
+            background: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-grid h3 { color: #334155; margin-bottom: 0.4rem; font-size: 1.05rem; }
+        .info-grid p { color: #475569; }
+
+        .footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #1d4ed8;
+            color: white;
+            padding: 0.7rem 1.3rem;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+
+        .back-link:hover { background: #1e40af; }
+
+        .language-selector { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .language-dropdown { position: relative; display: inline-block; }
+
+        .language-button {
+            background: rgba(255, 255, 255, 0.94);
+            border: 2px solid #1d4ed8;
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1d4ed8;
+        }
+
+        .language-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .language-dropdown-content.show { display: block; }
+        .language-option { width: 100%; border: none; background: white; font: inherit; text-align: left; padding: 0.75rem 1rem; cursor: pointer; display: flex; gap: 0.5rem; }
+        .language-option:hover { background: #f8fafc; }
+        .language-option.active { background: #1d4ed8; color: white; }
+        .honeypot { display: none; }
+
+        @media (max-width: 768px) {
+            .language-selector { top: 10px; right: 10px; }
+            .header-content h1 { font-size: 2rem; }
+            .support-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <div class="language-dropdown">
+            <button class="language-button" type="button" onclick="toggleLanguageDropdown()" aria-expanded="false">
+                <span id="current-flag">🇨🇳</span>
+                <span id="current-language">简体中文</span>
+                <span>▼</span>
+            </button>
+            <div class="language-dropdown-content" id="language-dropdown">
+                <button type="button" class="language-option active" onclick="changeLanguage('zh-Hans')" data-lang="zh-Hans"><span>🇨🇳</span><span>简体中文</span></button>
+                <button type="button" class="language-option" onclick="changeLanguage('en')" data-lang="en"><span>🇺🇸</span><span>English</span></button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1 data-i18n="header">Buy or Rent 支持</h1>
+                <p data-i18n="subtitle">操作说明、常见问题和联系方式</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <a href="index.html" class="back-link" data-i18n="backLink">← 返回主页</a>
+
+            <div class="support-grid">
+                <article class="support-card">
+                    <h3 data-i18n="startTitle">开始使用</h3>
+                    <p data-i18n="startText">打开应用即可看到默认国家与房型下的买 vs 租结论。</p>
+                    <ul>
+                        <li data-i18n="start1">选择国家与房型，加载当地市场基准</li>
+                        <li data-i18n="start2">在结果页拖动年份，查看 1–30 年净财富差距</li>
+                        <li data-i18n="start3">按需修改房价、利率、租金等参数</li>
+                    </ul>
+                </article>
+                <article class="support-card">
+                    <h3 data-i18n="useTitle">你会看到什么</h3>
+                    <ul>
+                        <li data-i18n="use1">结论：买、租，或接近持平</li>
+                        <li data-i18n="use2">期末净财富差额与逐年优势曲线</li>
+                        <li data-i18n="use3">月供、持有成本、房价与贷款余额</li>
+                        <li data-i18n="use4">差额公式的各项分解；可导出 PDF（需解锁）</li>
+                    </ul>
+                </article>
+                <article class="support-card">
+                    <h3 data-i18n="unlockTitle">试用与解锁</h3>
+                    <p data-i18n="unlockText">只看默认结果不收费。首次主动改参数起算 24 小时试用。</p>
+                    <ul>
+                        <li data-i18n="unlock1">试用结束后，一次购买可永久改参</li>
+                        <li data-i18n="unlock2">PDF 导出包含在同一次购买中；试用期间不可导出</li>
+                        <li data-i18n="unlock3">换机或重装后，在解锁页点「恢复购买」</li>
+                    </ul>
+                </article>
+                <article class="support-card">
+                    <h3 data-i18n="troubleTitle">遇到问题时</h3>
+                    <ul>
+                        <li data-i18n="trouble1">市场数据未更新：检查网络；离线时使用安装包内数据</li>
+                        <li data-i18n="trouble2">连不上 App Store：检查网络后重试</li>
+                        <li data-i18n="trouble3">购买等待批准：等 Apple 处理完成</li>
+                        <li data-i18n="trouble4">看不到已购状态：在解锁页点「恢复购买」</li>
+                    </ul>
+                </article>
+            </div>
+
+            <section class="support-section">
+                <h2 data-i18n="faqTitle">常见问题</h2>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" onclick="toggleFAQ(this)">
+                        <span data-i18n="q1">试用怎么开始？免费能用多久？</span>
+                        <span class="faq-symbol">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="a1">查看默认比较不开始试用。你第一次主动修改任意参数时，会开始 24 小时免费试用，期间可自由改参。试用结束后继续改参会打开解锁页。试用期间不能导出 PDF。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" onclick="toggleFAQ(this)">
+                        <span data-i18n="q2">如何解锁，以及如何恢复购买？</span>
+                        <span class="faq-symbol">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="a2intro">试用结束后改参，或尝试导出 PDF 时，会出现解锁页。你可以：</p>
+                        <ol>
+                            <li data-i18n="a2li1">点购买，通过 App Store 完成一次性付款</li>
+                            <li data-i18n="a2li2">如果这台设备上看不到已购买状态，点「恢复购买」</li>
+                        </ol>
+                        <p data-i18n="a2end">购买成功后，可永久调整参数并导出 PDF。这不是自动续期订阅。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" onclick="toggleFAQ(this)">
+                        <span data-i18n="q3">我输入的数字会被上传吗？</span>
+                        <span class="faq-symbol">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="a3">不会。你输入的房价、租金、利率等只在本机计算。有网络时，应用会下载公开的市场基准数据以更新默认值，该请求不包含你填写的内容。应用不要求注册账号。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" onclick="toggleFAQ(this)">
+                        <span data-i18n="q4">结果是投资或贷款建议吗？</span>
+                        <span class="faq-symbol">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="a4">不是。Buy or Rent 是估算工具，按你输入的假设比较买与租的期末净财富。结果不是预测、贷款报价，也不构成财务、税务、法律或房贷建议。真实交易的税费、费率、贷款条款与回报会不同，请按具体房源与书面报价修改参数。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" type="button" onclick="toggleFAQ(this)">
+                        <span data-i18n="q5">想退款怎么办？</span>
+                        <span class="faq-symbol">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p data-i18n="a5">付款由 Apple 处理。请在报告问题页面（reportaproblem.apple.com）用购买时的 Apple 账号申请退款。我们无法直接从应用里撤销一笔 App Store 付款。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="support-section">
+                <h2 data-i18n="contactTitle">联系支持</h2>
+                <p data-i18n="contactText">没有找到答案时，可以直接发邮件，或填写下面的表单。</p>
+                <div class="note">
+                    <span data-i18n="mailLead">邮箱：</span>
+                    <a href="mailto:fancheng_wang@hotmail.com?subject=Buy%20or%20Rent%20Support">fancheng_wang@hotmail.com</a>
+                </div>
+                <div id="form-success" class="alert-success" hidden>
+                    <strong data-i18n="successTitle">已收到你的消息。</strong>
+                    <span data-i18n="successText">我们会尽快回复。</span>
+                </div>
+                <div id="form-error" class="alert-error" hidden>
+                    <span data-i18n="errorText">发送失败。请直接发邮件，或稍后再试。</span>
+                </div>
+                <form name="buyorrent-support" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                    <input type="hidden" name="form-name" value="buyorrent-support">
+                    <p class="honeypot" aria-hidden="true"><label>Bot <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                    <div class="form-group">
+                        <label for="name" data-i18n="labelName">姓名</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="labelEmail">邮箱</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-i18n="labelSubject">主题</label>
+                        <select id="subject" name="subject" required>
+                            <option value="howto" data-i18n="optHowto">怎么使用</option>
+                            <option value="purchase" data-i18n="optPurchase">购买与恢复</option>
+                            <option value="bug" data-i18n="optBug">问题反馈</option>
+                            <option value="other" data-i18n="optOther">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="labelMessage">内容</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button class="btn" type="submit" data-i18n="submit">发送</button>
+                </form>
+            </section>
+
+            <section class="support-section">
+                <h2 data-i18n="appInfoTitle">应用信息</h2>
+                <div class="info-grid">
+                    <div>
+                        <h3 data-i18n="versionTitle">版本</h3>
+                        <p data-i18n="versionText">1.0</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="requireTitle">系统要求</h3>
+                        <p data-i18n="requireText">iPhone / iPad：iOS 17.0 或更高；Mac：macOS 14.0 或更高</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="devTitle">开发者</h3>
+                        <p>北京润智启航科技有限公司</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footerCopyright">© 2026 Buy or Rent. 保留所有权利。</p>
+            <p><a href="privacy.html" style="color:white;" data-i18n="footerPrivacy">隐私政策</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            'zh-Hans': {
+                pageTitle: 'Buy or Rent - 支持与帮助',
+                languageName: '简体中文',
+                flag: '🇨🇳',
+                header: 'Buy or Rent 支持',
+                subtitle: '操作说明、常见问题和联系方式',
+                backLink: '← 返回主页',
+                startTitle: '开始使用',
+                startText: '打开应用即可看到默认国家与房型下的买 vs 租结论。',
+                start1: '选择国家与房型，加载当地市场基准',
+                start2: '在结果页拖动年份，查看 1–30 年净财富差距',
+                start3: '按需修改房价、利率、租金等参数',
+                useTitle: '你会看到什么',
+                use1: '结论：买、租，或接近持平',
+                use2: '期末净财富差额与逐年优势曲线',
+                use3: '月供、持有成本、房价与贷款余额',
+                use4: '差额公式的各项分解；可导出 PDF（需解锁）',
+                unlockTitle: '试用与解锁',
+                unlockText: '只看默认结果不收费。首次主动改参数起算 24 小时试用。',
+                unlock1: '试用结束后，一次购买可永久改参',
+                unlock2: 'PDF 导出包含在同一次购买中；试用期间不可导出',
+                unlock3: '换机或重装后，在解锁页点「恢复购买」',
+                troubleTitle: '遇到问题时',
+                trouble1: '市场数据未更新：检查网络；离线时使用安装包内数据',
+                trouble2: '连不上 App Store：检查网络后重试',
+                trouble3: '购买等待批准：等 Apple 处理完成',
+                trouble4: '看不到已购状态：在解锁页点「恢复购买」',
+                faqTitle: '常见问题',
+                q1: '试用怎么开始？免费能用多久？',
+                a1: '查看默认比较不开始试用。你第一次主动修改任意参数时，会开始 24 小时免费试用，期间可自由改参。试用结束后继续改参会打开解锁页。试用期间不能导出 PDF。',
+                q2: '如何解锁，以及如何恢复购买？',
+                a2intro: '试用结束后改参，或尝试导出 PDF 时，会出现解锁页。你可以：',
+                a2li1: '点购买，通过 App Store 完成一次性付款',
+                a2li2: '如果这台设备上看不到已购买状态，点「恢复购买」',
+                a2end: '购买成功后，可永久调整参数并导出 PDF。这不是自动续期订阅。',
+                q3: '我输入的数字会被上传吗？',
+                a3: '不会。你输入的房价、租金、利率等只在本机计算。有网络时，应用会下载公开的市场基准数据以更新默认值，该请求不包含你填写的内容。应用不要求注册账号。',
+                q4: '结果是投资或贷款建议吗？',
+                a4: '不是。Buy or Rent 是估算工具，按你输入的假设比较买与租的期末净财富。结果不是预测、贷款报价，也不构成财务、税务、法律或房贷建议。真实交易的税费、费率、贷款条款与回报会不同，请按具体房源与书面报价修改参数。',
+                q5: '想退款怎么办？',
+                a5: '付款由 Apple 处理。请在报告问题页面（reportaproblem.apple.com）用购买时的 Apple 账号申请退款。我们无法直接从应用里撤销一笔 App Store 付款。',
+                contactTitle: '联系支持',
+                contactText: '没有找到答案时，可以直接发邮件，或填写下面的表单。',
+                mailLead: '邮箱：',
+                successTitle: '已收到你的消息。',
+                successText: '我们会尽快回复。',
+                errorText: '发送失败。请直接发邮件，或稍后再试。',
+                labelName: '姓名',
+                labelEmail: '邮箱',
+                labelSubject: '主题',
+                optHowto: '怎么使用',
+                optPurchase: '购买与恢复',
+                optBug: '问题反馈',
+                optOther: '其他',
+                labelMessage: '内容',
+                submit: '发送',
+                appInfoTitle: '应用信息',
+                versionTitle: '版本',
+                versionText: '1.0',
+                requireTitle: '系统要求',
+                requireText: 'iPhone / iPad：iOS 17.0 或更高；Mac：macOS 14.0 或更高',
+                devTitle: '开发者',
+                footerCopyright: '© 2026 Buy or Rent. 保留所有权利。',
+                footerPrivacy: '隐私政策'
+            },
+            en: {
+                pageTitle: 'Buy or Rent - Support',
+                languageName: 'English',
+                flag: '🇺🇸',
+                header: 'Buy or Rent Support',
+                subtitle: 'How it works, common questions, and how to reach us',
+                backLink: '← Back to Home',
+                startTitle: 'Get started',
+                startText: 'Open the app to see the default Buy vs Rent result for your country and home type.',
+                start1: 'Pick a country and home type to load local market benchmarks',
+                start2: 'On Results, drag the year to inspect the net-worth gap from year 1 to 30',
+                start3: 'Edit price, rate, rent, and other inputs as needed',
+                useTitle: 'What you see',
+                use1: 'A verdict: Buy, Rent, or near a tie',
+                use2: 'Ending net-worth gap and the year-by-year advantage curve',
+                use3: 'Monthly payment, holding cost, home value, and remaining loan',
+                use4: 'Each term in the gap formula; PDF export after unlock',
+                unlockTitle: 'Trial and unlock',
+                unlockText: 'Viewing the default result is free. The first time you change a parameter, a 24-hour trial begins.',
+                unlock1: 'After the trial, one purchase unlocks permanent editing',
+                unlock2: 'PDF export is included in that purchase; it stays locked during the trial',
+                unlock3: 'After reinstalling, tap Restore Purchases on the unlock screen',
+                troubleTitle: 'If something goes wrong',
+                trouble1: 'Market data did not refresh: check the network; offline, the app uses the bundled table',
+                trouble2: 'Cannot reach the App Store: check the network and try again',
+                trouble3: 'Purchase pending: wait for Apple to finish approval',
+                trouble4: 'Purchase not showing: tap Restore Purchases on the unlock screen',
+                faqTitle: 'Common questions',
+                q1: 'When does the trial start, and how long is it?',
+                a1: 'Viewing the default comparison does not start a trial. The first time you actively change any input, a 24-hour free trial begins and editing stays open. After it ends, the next edit opens the unlock screen. PDF export is unavailable during the trial.',
+                q2: 'How do I unlock, and how do I restore a purchase?',
+                a2intro: 'The unlock screen appears after the trial when you try to edit, or when you try to export a PDF. On that screen:',
+                a2li1: 'Tap Purchase and complete the one-time payment in the App Store',
+                a2li2: 'If this device does not show the purchase, tap Restore Purchases',
+                a2end: 'After purchase, editing and PDF export stay unlocked. This is not an auto-renewable subscription.',
+                q3: 'Are the numbers I enter uploaded?',
+                a3: 'No. Prices, rents, rates, and other inputs you type are calculated on the device. When online, the app downloads public market benchmarks to refresh defaults. That request does not include the values you typed. The app does not ask you to create an account.',
+                q4: 'Is the result financial or mortgage advice?',
+                a4: 'No. Buy or Rent is a calculator. It estimates ending net worth from the assumptions you enter. Results are not a forecast, a loan offer, or financial, tax, legal, or mortgage advice. A real purchase will have different taxes, fees, loan terms, and returns. Change the inputs to match a specific home and a written quote.',
+                q5: 'How do I request a refund?',
+                a5: 'Apple processes the payment. Request a refund at reportaproblem.apple.com with the Apple Account used to buy it. We cannot reverse an App Store payment from inside the app.',
+                contactTitle: 'Contact support',
+                contactText: 'If you still need help, email us or use the form below.',
+                mailLead: 'Email: ',
+                successTitle: 'We received your message.',
+                successText: 'We will reply as soon as we can.',
+                errorText: 'Could not send the message. Please email us, or try again later.',
+                labelName: 'Name',
+                labelEmail: 'Email',
+                labelSubject: 'Subject',
+                optHowto: 'How to use the app',
+                optPurchase: 'Purchase and restore',
+                optBug: 'Bug report',
+                optOther: 'Other',
+                labelMessage: 'Message',
+                submit: 'Send',
+                appInfoTitle: 'App information',
+                versionTitle: 'Version',
+                versionText: '1.0',
+                requireTitle: 'Requirements',
+                requireText: 'iPhone / iPad with iOS 17.0 or later; Mac with macOS 14.0 or later',
+                devTitle: 'Developer',
+                footerCopyright: '© 2026 Buy or Rent. All rights reserved.',
+                footerPrivacy: 'Privacy Policy'
+            }
+        };
+
+        function toggleLanguageDropdown() {
+            const menu = document.getElementById('language-dropdown');
+            const open = menu.classList.toggle('show');
+            document.querySelector('.language-button').setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function changeLanguage(lang) {
+            applyLanguage(lang);
+            document.getElementById('language-dropdown').classList.remove('show');
+            document.querySelector('.language-button').setAttribute('aria-expanded', 'false');
+        }
+
+        function applyLanguage(lang) {
+            const current = translations[lang] ? lang : 'zh-Hans';
+            const t = translations[current];
+            document.documentElement.lang = current === 'en' ? 'en' : 'zh-CN';
+            document.title = t.pageTitle;
+            document.getElementById('current-flag').textContent = t.flag;
+            document.getElementById('current-language').textContent = t.languageName;
+            document.querySelectorAll('[data-i18n]').forEach((el) => {
+                const value = t[el.getAttribute('data-i18n')];
+                if (value != null) el.textContent = value;
+            });
+            document.querySelectorAll('.language-option').forEach((option) => {
+                option.classList.toggle('active', option.dataset.lang === current);
+            });
+            localStorage.setItem('buyorrent-language', current);
+        }
+
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const open = answer.classList.toggle('active');
+            button.querySelector('.faq-symbol').textContent = open ? '−' : '+';
+        }
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.language-dropdown')) {
+                document.getElementById('language-dropdown').classList.remove('show');
+            }
+        });
+
+        document.querySelector('form[name="buyorrent-support"]').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const successMessage = document.getElementById('form-success');
+            const errorMessage = document.getElementById('form-error');
+            const button = form.querySelector('button[type="submit"]');
+            errorMessage.hidden = true;
+            button.disabled = true;
+            try {
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(form)).toString()
+                });
+                if (!response.ok) throw new Error(String(response.status));
+                form.hidden = true;
+                successMessage.hidden = false;
+            } catch (error) {
+                errorMessage.hidden = false;
+            } finally {
+                button.disabled = false;
+            }
+        });
+
+        applyLanguage(localStorage.getItem('buyorrent-language') || 'zh-Hans');
+    </script>
+</body>
+</html>
